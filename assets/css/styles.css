@@ -1,0 +1,22 @@
+:root {
+  --cor-primaria-preta: #000000;
+  --cor-primaria-cinza: #CCCCCC;
+  --cor-primaria-amarela: #DAFF01;
+  --cor-primaria-roxa: #9353FF;
+  --cor-complementar-vermelha: #EE6471;
+  --cor-complementar-laranja: #F87F46;
+
+  --fonte-regular: 400;
+  --fonte-medium: 500;
+  -fonte-bold: 700;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+}
