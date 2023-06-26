@@ -1,3 +1,4 @@
+/*estilização do "cabecalho"*/
 .cabecalho{
   background-color: var(--cor-primaria-preta);
   width: 100%;
@@ -8,35 +9,110 @@
   padding: 2rem;
   box-sizing: border-box;
 }
-
+/*estilização do nav "cabecalho__navegacao"*/
 .cabecalho__navegacao{
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-
 .cabecalho__navegacao-menu{
   display: flex;
   gap: 2rem;
 }
-
 .cabecalho__navegacao-menu-item-link{
   color: var(--cor-primaria-branca);
   text-decoration: none;
   text-transform: capitalize;
 }
-
+/*estilização da div pesquisa*/
 .cabecalho__pesquisa-input{
   width: 170px;
-
   padding: 0.75rem 1rem;
 }
-
 .cabecalho__pesquisa-btn{
   background-color: var(--cor-primaria-preta);
-
   padding: 0.75rem;
   color: var(--cor-primaria-branca);
   text-transform: capitalize;
   border: 1px solid var(--cor-primaria-branca);
+}
+
+/*criação do menu hamburguer*/
+.cabecalho__hamburguer{
+  cursor: pointer;
+  display: none;
+}
+.cabecalho__hamburguer-linha{
+  position: relative;
+  display: block;
+  background: var(--cor-primaria-amarela);
+  width: 28px;
+  height: 2px;
+  margin: 0.1rem 0.2rem 0.5rem 0.2rem; 
+  transition: 0.3s;
+}
+
+/*ajustando o menu pra ficar lateral quando mobile*/
+@media (max-width: 375px){
+  .cabecalho{
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 1rem 1rem;
+  }
+  .cabecalho__navegacao{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .cabecalho__navegacao-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 250px;
+    background: #343A40;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    padding: 3rem 2rem 0 2rem;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .cabecalho__hamburguer{
+    display: block;
+    z-index: 1;
+  }
+  .cabecalho__navegacao-menu-item{
+    width: 100%;
+    border-bottom: 1px solid #CED4DA;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .cabecalho__navegacao-menu-item:last-child{
+    border-bottom: none;
+  }
+  .cabecalho__navegacao-menu-item-link{
+    font-size: 1em;
+  }
+  .cabecalho__pesquisa{
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .cabecalho__pesquisa-input{
+    width: 100%;
+  }
+  .cabecalho__navegacao-menu.ativa{
+    transform: translateX(0);
+  }
+  .cabecalho__hamburguer.ativa .linha1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  .cabecalho__hamburguer.ativa .linha2{
+    opacity: 0;
+  }
+  .cabecalho__hamburguer.ativa .linha3{
+    transform: rotate(45deg) translate(-6px, -6px);    
+  }
 }

@@ -11,7 +11,12 @@
   --fonte-medium: 500;
   -fonte-bold: 700;
 }
-
 body{
   font-family: 'Inter', sans-serif;
+  width:100vw;
+}
+@media (max-width: 375px) {
+  body{
+    overflow-x: hidden;
+  }
 }
